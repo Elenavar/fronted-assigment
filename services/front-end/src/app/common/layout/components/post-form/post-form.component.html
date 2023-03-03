@@ -1,4 +1,30 @@
 <div class="form">
     <button (click)="onCloseForm()">Close</button>
-    <p>post-from works!</p>
+    <form (ngSubmit)="registerPost()">
+        <div>
+            <label for="author">Author</label>
+            <input require type="text" name="author" [(ngModel)]="register.author"/>
+        </div>    
+        <div>
+            <label for="author_fullname">Author fullname</label>
+            <input type="text" name="author_fullname" [(ngModel)]="register.author_fullname"/>
+        </div>
+        <div>
+            <label for="category">Category</label>
+            <input type="text" name="category" [(ngModel)]="register.category"/> 
+        </div>
+        <div>
+            <label for="language">Language</label>
+            <input require type="text" name="language" [(ngModel)]="register.language"/>
+        </div>
+        <div>
+            <label for="originalPostId">Original post id</label>
+            <input require type="text" name="originalPostId" [(ngModel)]="register.original_post_id"/>
+        </div>
+        <div>
+            <label for="title">Title</label>
+            <input require type="text" name="title" [(ngModel)]="register.title"/>
+        </div>  
+        <button type="submit">Add translation</button>
+    </form>
 </div>

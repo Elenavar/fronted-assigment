@@ -3,8 +3,6 @@ export interface Post{
     author_fullname: string,
     category: string,
     language: string,
-    id: string,
+    original_post_id:string,
     title: string,
-    selftext:string,
-    url: string,
 }

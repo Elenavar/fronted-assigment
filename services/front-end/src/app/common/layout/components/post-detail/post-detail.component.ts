@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import {Post} from '../../../../model/post.model';
 
 @Component({
   selector: 'app-post-detail',
@@ -8,15 +7,7 @@ import {Post} from '../../../../model/post.model';
 })
 export class PostDetailComponent implements OnInit {
   @Output() closeDetail = new EventEmitter()
-@Input() postChoosen: Post = {
-      author: "",
-      author_fullname: "",
-      category: "",
-      language: "",
-      id: "",
-      title: "",
-      selftext: "",
-      url: "",}
+@Input() postChoosen: any = {}
 
   detail = false;
   constructor() { }

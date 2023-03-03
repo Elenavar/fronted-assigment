@@ -7,6 +7,7 @@ import { routes } from './dashboard.routing';
 import { PostComponent } from '../../common/layout/components/post/post.component';
 import { PostDetailComponent } from 'src/app/common/layout/components/post-detail/post-detail.component';
 import { PostFormComponent } from 'src/app/common/layout/components/post-form/post-form.component';
+import { FormsModule } from '@angular/forms';
 
 
 export const loader = ['en', 'es'].reduce((acc, lang) => {
@@ -23,6 +24,7 @@ export const loader = ['en', 'es'].reduce((acc, lang) => {
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild(routes),
   ],
   providers: [

@@ -8,15 +8,7 @@ import {Post} from '../../../../model/post.model';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent {
-  @Input() post: Post = {
-    author: "",
-        author_fullname: "",
-        category: "",
-        language: "",
-        id: "",
-        title: "",
-        selftext: "",
-        url: "",
+  @Input() post: any = {
   }
 
   @Output() showDetail = new EventEmitter();
@@ -26,7 +18,7 @@ export class PostComponent {
   constructor(){}
 
   onShowDetail(){
-    this.showDetail.emit(this.post.id);
+    this.showDetail.emit(this.post.data.id);
   }
 
   onShowForm(){
