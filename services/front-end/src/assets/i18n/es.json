@@ -1,0 +1,10 @@
+{
+  "locale": "es-ES",
+  "empty": " ",
+  "mainLayout": {
+    "links": {
+      "link-home": "Inicio",
+      "link-dashboard": "Panel de administración"
+    }
+  }
+}

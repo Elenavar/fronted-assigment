@@ -1,0 +1,24 @@
+<div class="dashboard">
+    <h1 class="dashboard__title">posts</h1>
+    
+    <ul class="dashboard__postList">
+        <app-post [post]="post" *ngFor="let post of posts" (showDetail)="onShowDetail($event)" (showForm)="onShowForm($event)"></app-post>
+    </ul>
+
+    <app-post-form class="dashboard__form" [class.active]="showPostForm"></app-post-form>
+    <app-post-detail [postChoosen]="postChoosen" class="dashboard__postDetail" [class.active]="showPostDetail" (closeDetail)="onCloseDetail($event)"></app-post-detail>
+<!-- <div class="dashboard__postDetail postDetail" [class.active]="showPostDetail">
+    <div class="postDetail__postChoosen">
+        <button class="postDetail__postChoosen-button" *ngIf="postChoosen" (click)="togglePostDetail()">Close</button>
+        <ul class="postDetail__postChoosen--list">
+            <li>id: {{postChoosen.id}}</li>
+            <li>author: {{postChoosen.author}}</li>
+            <li>author_fullname: {{postChoosen.author_fullname}}</li>
+            <li>title: {{postChoosen.title}}</li>
+            <li>category: {{postChoosen.category}}</li>
+            <li>selftext: {{postChoosen.selftext}}</li>
+            <li>language: {{postChoosen.language}}</li>
+            <li>url: {{postChoosen.url}}</li>
+        </ul>
+</div>
+</div> -->

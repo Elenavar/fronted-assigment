@@ -1,0 +1,13 @@
+<div class="postDetail__postChoosen">
+    <button class="postDetail__postChoosen-button" *ngIf="postChoosen" (click)="onCloseDetail()">Close</button>
+    <ul class="postDetail__postChoosen--list">
+        <li>id: {{postChoosen.id}}</li>
+        <li>author: {{postChoosen.author}}</li>
+        <li>author_fullname: {{postChoosen.author_fullname}}</li>
+        <li>title: {{postChoosen.title}}</li>
+        <li>category: {{postChoosen.category}}</li>
+        <li>selftext: {{postChoosen.selftext}}</li>
+        <li>language: {{postChoosen.language}}</li>
+        <li>url: {{postChoosen.url}}</li>
+    </ul>
+</div>

@@ -1,0 +1,11 @@
+<li class="post">
+    <article class="post__article">
+        <div class="post__article--div div">
+            <button class="div__button" (click)="onShowForm()">Add translation</button>
+            <button (click)="onShowDetail()">More info</button>
+        </div>
+        <h2 class="div__author"> Author: {{post.author}}</h2>
+        <h3 class="post__article--title">Title: {{post.title}}</h3>
+        <p class="post__article--language">Language: {{post.language}}</p>
+    </article>
+</li>

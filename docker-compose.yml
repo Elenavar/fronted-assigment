@@ -1,0 +1,25 @@
+version: '3.3'
+services:
+  api:
+    image: home-assignment-api
+    container_name: home-assignment-api
+    build:
+      context: ./services/api
+      dockerfile: ./Dockerfile
+    command: sh -c "yarn start"
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./services/api/src:/app/src
+      - ./data:/data
+  front:
+    image: home-assignment-front
+    container_name: home-assignment-front
+    build:
+      context: ./services/front-end
+      dockerfile: ./Dockerfile
+    command: sh -c "npm run start"
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./services/front-end/src:/app/src

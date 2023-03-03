@@ -1,0 +1,43 @@
+@import '../../../../../assets/styles/theme';
+
+.dashboard{
+    &__title{
+        @include font-h1;
+        text-transform: uppercase;
+        margin-top: 20px;
+    }
+    &__postList{
+        margin: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    }
+&__postDetail{
+    position: fixed;
+  top: 0;
+  left: 50%;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: all ease-out .5s;
+  transform: translateX(100%);
+  &.active{
+    transform: translateX(0);
+  }
+}
+&__form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  &.active{
+    display: block;
+  }
+}
+}
