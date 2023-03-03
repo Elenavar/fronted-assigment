@@ -30,7 +30,7 @@ export class PostComponent {
   }
 
   onShowForm(){
-    this.form = !this.form
+    this.form = true;
     this.showForm.emit(this.form)
   }
 

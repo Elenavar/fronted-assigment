@@ -75,4 +75,8 @@ export class DashboardPageComponent implements OnInit {
     this.showPostDetail=detail;
   }
 
+  onCloseForm(form){
+    this.showPostForm = form;
+  }
+
 }
