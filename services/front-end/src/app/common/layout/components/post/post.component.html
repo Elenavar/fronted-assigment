@@ -2,7 +2,8 @@
     <article class="post__article">
         <div class="post__article--div div">
             <button *ngIf = "post.data.original_post_id===null"class="div__button" (click)="onShowForm()">Add translation</button>
-            <button (click)="onShowDetail()">More info</button>
+            <button *ngIf = "post.data.original_post_id===null" (click)="onShowDetail()">More info</button>
+            <button *ngIf = "post.data.original_post_id"class="div__button" >Localization</button>
         </div>
         <h2 class="div__author"> Author: {{post.data.author}}</h2>
         <h3 class="post__article--title">Title: {{post.data.title}}</h3>

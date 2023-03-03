@@ -13,7 +13,6 @@ export class PostComponent {
 
   @Output() showDetail = new EventEmitter();
   @Output() showForm = new EventEmitter();
-   form = false;
 
   constructor(){}
 
@@ -22,8 +21,7 @@ export class PostComponent {
   }
 
   onShowForm(){
-    this.form = true;
-    this.showForm.emit(this.form)
+    this.showForm.emit(this.post.data.id)
   }
 
 }

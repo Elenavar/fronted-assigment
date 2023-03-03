@@ -1,5 +1,6 @@
-import { Component, OnInit, EventEmitter, Output} from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input} from '@angular/core';
 import { Post } from 'src/app/model/post.model';
+import { PostsService } from 'src/app/callToApi/posts.service';
 
 @Component({
   selector: 'app-post-form',
@@ -8,18 +9,22 @@ import { Post } from 'src/app/model/post.model';
 })
 export class PostFormComponent implements OnInit {
   @Output() closeForm = new EventEmitter()
+  @Output() sendForm = new EventEmitter()
   register: Post = {
     author: "",
     author_fullname: "",
     category: "",
     language: "",
-    original_post_id:"",
+    originalPostId:"",
     title: "",
   }
+  @Input() postChoosen: any = {}
   form = true;
 
   
-  constructor() { }
+  constructor(
+    private postsServices: PostsService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -29,14 +34,15 @@ export class PostFormComponent implements OnInit {
     this.closeForm.emit(this.form)
   }
   registerPost(){
-    console.log(this.register)
-    this.register = {
-      author: "",
-      author_fullname: "",
-      category: "",
-      language: "",
-      original_post_id:"",
-      title: "",}
+    this.sendForm.emit(this.register)
+    // this.postsServices.addTranslation(this.register).subscribe(data=>console.log(data))
+    // this.register = {
+    //   author: "",
+    //   author_fullname: "",
+    //   category: "",
+    //   language: "",
+    //   originalPostId:"",
+    //   title: "",}
   }
   
 

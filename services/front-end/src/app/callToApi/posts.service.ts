@@ -13,15 +13,11 @@ export class PostsService {
   ) { }
 
   getData(){
-    return this.http.get<any>(this.apiUrl)
+    return this.http.get<any>(`${this.apiUrl}?limit=50`)
     }
-  
 
-  // getOnePost(id:string){
-  //   return (this.http.get<any>(this.apiUrl)
-  //   .subscribe(response=>{
-  //     return(response.data.data.find(post=>post.id===id))
-  //   }))
-  //   }
+  addTranslation(data:Post){
+    return this.http.post<Post>(this.apiUrl,data)
+  }
   }
 

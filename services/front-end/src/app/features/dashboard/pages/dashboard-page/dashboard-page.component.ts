@@ -22,6 +22,7 @@ export class DashboardPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllPosts()
+    // this.deletePost()
   }
 
   getAllPosts() {
@@ -40,23 +41,31 @@ export class DashboardPageComponent implements OnInit {
       //   }
       // })
       this.posts=response.data.data
-      console.log(this.posts)
+      // console.log(this.posts)
     })
   }
-
+// deletePost(){
+//   this.postsServices.delete('116z1r8').subscribe(response => console.log(response))
+// }
   onShowDetail(id: string) {
-    console.log(id)
+    // console.log(id)
     this.showPostDetail=true;
     this.postsServices.getData().subscribe(response => {
         const cleanData = response.data.data.find(post => post.data.id === id)
-        console.log(cleanData)
+        // console.log(cleanData)
         this.postChoosen = cleanData.data
-        console.log(this.postChoosen)
+        // console.log(this.postChoosen)
       })
   }
 
-  onShowForm(form){
-    this.showPostForm = form;
+  onShowForm(id){
+    this.showPostForm = true;
+    this.postsServices.getData().subscribe(response => {
+      const cleanData = response.data.data.find(post => post.data.id === id)
+      console.log(cleanData)
+      this.postChoosen = cleanData.data
+      console.log(this.postChoosen)
+    })
   }
 
   onCloseDetail(detail){
@@ -65,6 +74,11 @@ export class DashboardPageComponent implements OnInit {
 
   onCloseForm(form){
     this.showPostForm = form;
+  }
+
+  addPost(register){
+
+    this.postsServices.addTranslation(register).subscribe(data=>this.posts.unshift(data))
   }
 
 }
