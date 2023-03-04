@@ -1,5 +1,6 @@
 @import '../../../../../assets/styles/theme';
-.post{
+
+.post {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -9,9 +10,11 @@
     height: 230px;
     border-radius: 5px;
     padding: 15px;
-    &__article{
+
+    &__article {
         width: 300px;
-        &--div{
+
+        &--buttons {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -19,22 +22,35 @@
             gap: 10px;
             margin: 5px;
         }
-        &--title{
+
+        &--author {
+            @include font-body;
+            margin-top: 20px;
+        }
+
+        &--title {
             @include font-small;
         }
-        &--language{
+
+        &--language {
             @include font-small;
         }
     }
 }
 
-.div{
-    &__author{
-        @include font-body;
-        margin-top: 20px;
-    }
-    &__button{
+.buttons {
+    &__add {
         @include font-button;
+        border-radius: 5px;
+        padding: 3px;
+    }
+    &__info{
+        @include font-button-2;
+        border-radius: 5px;
+        padding: 3px;
+    }
+    &__localization{
+        @include font-button-2;
         border-radius: 5px;
         padding: 3px;
     }

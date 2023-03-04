@@ -1,14 +1,18 @@
-<div class="postDetail__postChoosen">
-    <button class="postDetail__postChoosen-button" *ngIf="postChoosen" (click)="onCloseDetail()">Close</button>
-    <ul class="postDetail__postChoosen--list">
-        <li>id: {{postChoosen.id}}</li>
-        <li>author: {{postChoosen.author}}</li>
-        <li>author_fullname: {{postChoosen.author_fullname}}</li>
-        <li>title: {{postChoosen.title}}</li>
-        <li>category: {{postChoosen.category}}</li>
-        <li>selftext: {{postChoosen.selftext}}</li>
-        <li>language: {{postChoosen.language}}</li>
-        <li>url: {{postChoosen.url}}</li>
-        <li>Original post id: {{postChoosen.original_post_id}}</li>
-    </ul>
+<div class="postDetail">
+    <button class="postDetail__closeButton" *ngIf="postChoosen" (click)="onCloseDetail()">Close</button>
+    <div class="postDetail__details">
+        <ul class="postDetail__details--list">
+            <li>id: {{postChoosen.id}}</li>
+            <li>author: {{postChoosen.author}}</li>
+            <li>author_fullname: {{postChoosen.author_fullname}}</li>
+            <li>title: {{postChoosen.title}}</li>
+            <li>category: {{postChoosen.category}}</li>
+            <li>subreddit: {{postChoosen.subreddit}}</li>
+            <li>name: {{postChoosen.name}}</li>
+            <li>score: {{postChoosen.score}}</li>
+            <li>subreddit subcribers: {{postChoosen.subreddit_subscribers}}</li>
+            <li>language: {{postChoosen.language}}</li>
+            <li >Original post id: {{postChoosen.original_post_id}}</li>
+        </ul>
+    </div>
 </div>
