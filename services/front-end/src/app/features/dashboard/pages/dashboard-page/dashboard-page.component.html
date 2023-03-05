@@ -5,9 +5,9 @@
         <app-post [post]="post" *ngFor="let post of posts" (showDetail)="getDetail($event)" (showForm)="postForm($event)"></app-post>
     </ul>
 
-    <app-post-form [postChoosen]="postChoosen" class="dashboard__form" [class.active]="isEnabledAdd$" (sendForm)="addPost($event)"></app-post-form>
+    <app-post-form [postChoosen]="postChoosen" class="dashboard__form" [class.active]="isEnabledAdd$ | async" (sendForm)="addPost($event)"></app-post-form>
     
-    <app-post-detail [postChoosen]="postChoosen" class="dashboard__postDetail" [class.active]="isEnabledInfo$"></app-post-detail>
+    <app-post-detail [postChoosen]="postChoosen" class="dashboard__postDetail" [class.active]="isEnabledInfo$ | async"></app-post-detail>
 
 
 

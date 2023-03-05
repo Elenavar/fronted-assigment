@@ -36,11 +36,12 @@ registerLocaleData(localeEn, 'en');
     TranslocoRootModule,
     MatNativeDateModule,
     MarkdownModule.forRoot(),
-    StoreModule.forRoot({
-      button: buttonReducer,
-    }),
+    // StoreModule.forRoot({
+    //   button: buttonReducer,
+    // }),
     StoreModule.forRoot({
       router: routerReducer,
+      button: buttonReducer,
     }, {}),
     EffectsModule.forRoot([]),
     StoreRouterConnectingModule.forRoot(),

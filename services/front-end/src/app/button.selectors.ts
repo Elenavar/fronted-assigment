@@ -1,5 +1,5 @@
 import { createSelector } from '@ngrx/store';
-import { ButtonState } from './button.reducer';
+import { ButtonState } from './button.state';
 
 export const selectButtonState = (state: any) => state.button;
 

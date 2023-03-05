@@ -1,15 +1,8 @@
 import { createReducer, on } from '@ngrx/store';
 import { enableButtonAdd, disableButtonAdd, enableButtonInfo, disableButtonInfo } from './button.actions';
+import { initialState } from './button.state';
 
-export interface ButtonState {
-  isEnabledAdd: boolean;
-  isEnabledInfo:boolean
-}
-
-export const initialState: ButtonState = {
-    isEnabledAdd: false,
-    isEnabledInfo:false
-  };
+export const buttonStateKey = 'button';
   
   export const buttonReducer = createReducer(
     initialState,

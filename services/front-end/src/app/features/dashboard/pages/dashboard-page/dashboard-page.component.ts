@@ -16,14 +16,15 @@ export class DashboardPageComponent implements OnInit {
   postChoosen: any ={
   }
 
-  showPostDetail = false;
-  showPostForm = false;
-  isEnabledAdd$ = this.store.pipe(select(selectIsButtonAddEnabled));
-  isEnabledInfo$ = this.store.pipe(select(selectIsButtonInfoEnabled));
+  // showPostDetail = false;
+  // showPostForm = false;
   constructor(
     private postsServices: PostsService,
     private store: Store
   ) { }
+
+  isEnabledAdd$ = this.store.pipe(select(selectIsButtonAddEnabled));
+  isEnabledInfo$ = this.store.pipe(select(selectIsButtonInfoEnabled));
 
   ngOnInit(): void {
     this.getAllPosts()
