@@ -21,8 +21,6 @@ export class PostDetailComponent implements OnInit {
   }
 
   onCloseDetail() {
-    // this.detail=false
-    // this.closeDetail.emit(this.detail)
     this.store.dispatch(disableButtonInfo());
   }
 }

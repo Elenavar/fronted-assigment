@@ -11,7 +11,6 @@ import { selectIsButtonAddEnabled} from 'src/app/button.selectors';
   styleUrls: ['./post-form.component.scss']
 })
 export class PostFormComponent implements OnInit {
-  // @Output() closeForm = new EventEmitter()
   @Output() sendForm = new EventEmitter()
   register: Post = {
     author: "",
@@ -35,20 +34,10 @@ export class PostFormComponent implements OnInit {
   }
 
   onCloseForm(){
-    // this.form = false;
-    // this.closeForm.emit(this.form)
     this.store.dispatch(disableButtonAdd());
   }
   registerPost(){
     this.sendForm.emit(this.register)
-    // this.postsServices.addTranslation(this.register).subscribe(data=>console.log(data))
-    // this.register = {
-    //   author: "",
-    //   author_fullname: "",
-    //   category: "",
-    //   language: "",
-    //   originalPostId:"",
-    //   title: "",}
   }
   
 
