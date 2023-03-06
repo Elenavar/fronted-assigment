@@ -129,3 +129,13 @@ useful to reference the language in which the post has been written
 Front-End position skill assessment home assignment.
 
 **[Place here any extra documentation or comments you want us to have.]**
+
+## Project folder structure
+
+- `src/app/common/layout/post` - Folder with post component.
+
+- `src/app/common/layout/post-detail` - Folder with the component for displaying post details.
+
+- `src/app/common/layout/post-form` - Folder with the component for displaying the form for making requests.
+
+- `src/app/button.actions.ts`, `src/app/button.reducer.ts`, `src/app/button.selectors.ts`, `src/app/button.state.ts` - Files needed to manage the state of the buttons with NgRx.
